@@ -13,13 +13,9 @@ public class Point {
 
   }
 
-  public double sq (){
-      return (this.x - this.y)*(this.x - this.y);
-
-  }
 
   public double distance() {
-    Point p2 = new Point(8,11);
+    Point p2 = new Point(8,10);
     return Math.sqrt((this.x - this.y)*(this.x - this.y) + (p2.x -p2.y)*(p2.x - p2.y));
   }
 
