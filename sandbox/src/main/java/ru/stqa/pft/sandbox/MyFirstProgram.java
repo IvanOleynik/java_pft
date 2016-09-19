@@ -15,16 +15,16 @@ public class MyFirstProgram {
 
     Point p1 = new Point(2,3);
     Point p2 = new Point(8,11);
-    System.out.println("Расстояние между 2-мя точками A(" + p1.x + ";" + p1.y + ") и Б(" + p2.x + ";" +  p2.y + ") = " + Math.sqrt(p1.sq() + p2.sq())) ;
+    System.out.println("Расстояние между 2-мя точками A(" + p1.x + ";" + p1.y + ") и Б(" + p2.x + ";" +  p2.y + ") = " + p1.distance()) ;
 
   }
 
   public static void hello(String somebody) {
     System.out.println("Hello," + somebody + "!");
   }
-  public static double distance (Point p1, Point p2) {
-    return Math.sqrt((p1.x - p1.y) * (p1.x - p1.y) + (p2.x - p2.y) * (p2.x - p2.y));
-  }
+  //public static double distance (Point p1, Point p2) {
+    //return Math.sqrt((p1.x - p1.y) * (p1.x - p1.y) + (p2.x - p2.y) * (p2.x - p2.y));
+  //}
 
   }
 
