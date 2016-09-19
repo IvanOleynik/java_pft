@@ -11,7 +11,7 @@ public class PointTests {
   @Test
   public void testDistance() {
     Point p1 = new Point(2,3);
-    //Point p2 = new Point(8,32);
+    //Point p2 = new Point(8,10);
     Assert.assertEquals(p1.distance(), 2.23606797749979);
 
 
