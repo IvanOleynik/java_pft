@@ -9,11 +9,12 @@ public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() {
-    int before = app.getGroupHelper().getGroupCount();
+    app.getNavigationHelper().gotoHomePage();
+    int before = app.getContactHelper().getContactCount();
     app.getNavigationHelper().gotoAddNewContact();
     app.getContactHelper().createContact(new ContactData("Иван", "Семенович", "Голопуцков", "golopuc",
             "Свободная Касса", "Петровка, 38", "8(999)3883883", "golopuc@gmail.com", "test1"));
-    int after = app.getGroupHelper().getGroupCount();
+    int after = app.getContactHelper().getContactCount();
     Assert.assertEquals(after, before +1);
 
 
