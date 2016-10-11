@@ -17,7 +17,7 @@ public class ContactModificationTests extends TestBase {
     if (!app.getContactHelper().isThereAContact()) {
       app.getNavigationHelper().gotoAddNewContact();
       app.getContactHelper().createContact(new ContactData("Иван", "Семенович", "Голопуцков", "golopuc",
-              "Свободная Касса", "Петровка, 38", "8(999)3883883", "golopuc@gmail.com", "test1"));
+              "Свободная Касса", "Петровка, 38", "8(99we9)3883883", "golopuc@gmail.com", "test1"));
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().selectContact(before.size() - 1);
