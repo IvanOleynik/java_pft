@@ -5,6 +5,8 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
+import static java.awt.SystemColor.text;
+
 /**
  * Created by www on 26.09.2016.
  */
@@ -42,6 +44,10 @@ public class HelperBase {
     } catch (NoAlertPresentException e) {
       return false;
     }
+  }
+
+  protected String GetText(By locator ) {
+   return wd.findElement(locator).getText();
   }
 
   protected boolean isElementPresent(By locator) {
