@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -15,9 +14,9 @@ public class ContactModificationTests extends TestBase {
 
   @Test (enabled = false)
   public void testContactCreation() {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if (!app.getContactHelper().isThereAContact()) {
-      app.getNavigationHelper().gotoAddNewContact();
+      app.goTo().gotoAddNewContact();
       app.getContactHelper().createContact(new ContactData("Иван", "Семенович", "Голопуцков", "golopuc",
               "Свободная Касса", "Петровка, 38", "8(99we9)3883883", "golopuc@gmail.com", "test1"));
     }
