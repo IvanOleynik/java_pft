@@ -22,7 +22,7 @@ public class NavigationHelper extends HelperBase {
     click(By.linkText("groups"));
   }
 
-  public void gotoAddNewContact() {
+  public void addNewContact() {
     if (isElementPresent(By.tagName("h1"))
             && GetText(By.tagName("h1")).equals("Edit / add address book entry")) {
       return;
@@ -31,7 +31,7 @@ public class NavigationHelper extends HelperBase {
   }
 
 
-  public void gotoHomePage() {
+  public void homePage() {
     if (isElementPresent(By.id("maintable"))) {
       return;
     }
