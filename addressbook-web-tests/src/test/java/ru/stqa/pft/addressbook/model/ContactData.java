@@ -4,7 +4,7 @@ package ru.stqa.pft.addressbook.model;
  * Created by www on 26.09.2016.
  */
 public class ContactData {
-  private int id = Integer.MAX_VALUE;
+  private int id ;
   private String firstname;
   private String middlename;
   private String lastname;
@@ -14,6 +14,7 @@ public class ContactData {
   private String homePhone;
   private String mobilePhone;
   private String workPhone;
+  private String allPhones;
   private String email;
   private String group;
 
@@ -24,6 +25,15 @@ public class ContactData {
 
   public ContactData withId(int id) {
     this.id = id;
+    return this;
+  }
+
+  public String getAllPhones() {
+    return allPhones;
+  }
+
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
     return this;
   }
 
@@ -159,5 +169,6 @@ public class ContactData {
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     return result;
   }
+
 }
 
