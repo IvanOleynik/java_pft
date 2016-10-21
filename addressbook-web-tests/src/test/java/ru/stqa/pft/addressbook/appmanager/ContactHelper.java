@@ -135,6 +135,21 @@ public class ContactHelper extends HelperBase {
             .withEmail(email).withEmail2(email2).withEmail3(email3);
   }
 
+  public ContactData infoFromInfoForm(ContactData contact) {
+    initContactInfoById(contact.getId());
+    String allInfo = wd.findElement(By.xpath(".//*[@id='content']")).getText();
+
+    wd.navigate().back();
+    return new ContactData().withAllIInfo(allInfo);
+  }
+
+  private void initContactInfoById(int id) {
+    WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']", id)));
+    WebElement row = checkbox.findElement(By.xpath("./../.."));
+    List<WebElement> cells = row.findElements(By.tagName("td"));
+    cells.get(6).findElement(By.tagName("a")).click();
+  }
+
   private void initContactModificationById(int id) {
     WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']", id)));
     WebElement row = checkbox.findElement(By.xpath("./../.."));
