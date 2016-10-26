@@ -1,0 +1,54 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "https://clickft7.alfaintra.net/login/?contextType=external&username=string&password=sercure_string&challenge_url=https%3A%2F%2Fclickft7.alfaintra.net%3A443%2Fadfform%2Fauth.jspx&request_id=1533200082282471320&authn_try_count=0&locale=ru_RU&resource_url=https%253A%252F%252Fcainft7.alfaintra.net%252Fretail-cain%252Fcain"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "username"
+      },
+      "text": "1576574"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "password"
+      },
+      "text": "000000"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='button-case']//button[.='Войти']"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "img.stock-card__image"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Каталог"
+      }
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
