@@ -6,7 +6,7 @@ import java.io.File;
  * Created by www on 26.09.2016.
  */
 public class ContactData {
-  private int id;
+  private int id =  Integer.MAX_VALUE;
   private String firstname;
   private String middlename;
   private String lastname;
