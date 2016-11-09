@@ -4,42 +4,65 @@ import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
+import javax.persistence.*;
 import java.io.File;
 
-@XStreamAlias("contact")
+//@XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 
 /**
  * Created by www on 26.09.2016.
  */
 public class ContactData {
-  @XStreamOmitField
-  private int id =  Integer.MAX_VALUE;
-  @Expose
+
+  @Id
+  @Column
+  //@XStreamOmitField
+  private int id;// =  Integer.MAX_VALUE;
+  //@Expose
+  @Column(name = "firstname")
   private String firstname;
+  @Column(name = "middlename")
   private String middlename;
-  @Expose
+  //@Expose
+  @Column(name = "lastname")
   private String lastname;
+  @Column(name = "nickname")
   private String nickname;
+  @Column(name = "company")
   private String company;
+  @Column(name = "address")
   private String address;
+  @Column(name = "home")
   private String homePhone;
+  @Column(name = "mobile")
   private String mobilePhone;
+  @Column(name = "work")
   private String workPhone;
+  @Column(name = "id")
   private String allPhones;
+  @Column(name = "email")
   private String email;
+  @Column(name = "email2")
   private String email2;
+  @Column(name = "email3")
   private String email3;
+  @Transient
   private String allEmails;
+  @Transient
   private String group;
+  @Transient
   private String allInfo;
-  private File photo;
+  @Column(name = "photo")
+  private String photo;
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
