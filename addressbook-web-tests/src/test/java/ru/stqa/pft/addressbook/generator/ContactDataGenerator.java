@@ -66,6 +66,18 @@ public class ContactDataGenerator {
     }
   }
 
+
+
+  private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
+    System.out.println(new File(".").getAbsolutePath());
+    try (Writer writer = new FileWriter(file)) {
+      for (ContactData contact : contacts) {
+        writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getMiddlename(), contact.getLastname(),
+                contact.getNickname(), contact.getAddress(), contact.getEmail(), contact.getCompany(), contact.getMobilePhone()));
+      }
+    }
+  }
+
   private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
     String json = gson.toJson(contacts);
@@ -75,20 +87,13 @@ public class ContactDataGenerator {
   }
 
 
-  private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
-    System.out.println(new File(".").getAbsolutePath());
-    try (Writer writer = new FileWriter(file)) {
-      for (ContactData contact : contacts) {
-        writer.write(String.format("%s;%s\n", contact.getFirstname(), contact.getLastname()));
-      }
-    }
-  }
-
   private List<ContactData> generateContacts(int count) {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData()
-              .withFirstname(String.format("Вася %s", i)).withLastname(String.format("Пупкин %s", i)));
+              .withFirstname(String.format("Вася %s", i)).withMiddlename(String.format("Бекович %s", i)).withLastname(String.format("Пупкин %s", i))
+              .withNickname(String.format("пуп %s", i)).withAddress(String.format("Солянка,25 %s", i)).withEmail(String.format("vasek@gmail.com %s", i))
+              .withCompany(String.format("ИП Пупкин %s", i)).withMobilePhone(String.format("89263883883 %s", i)));
     }
     return contacts;
   }
