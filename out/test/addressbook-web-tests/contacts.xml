@@ -1,0 +1,22 @@
+<list>
+  <contact>
+    <firstname>Вася 0</firstname>
+    <middlename>Бекович 0</middlename>
+    <lastname>Пупкин 0</lastname>
+    <nickname>пуп 0</nickname>
+    <company>ИП Пупкин 0</company>
+    <address>Солянка,25 0</address>
+    <mobilePhone>89263883883 0</mobilePhone>
+    <email>vasek@gmail.com 0</email>
+  </contact>
+  <contact>
+    <firstname>Вася 1</firstname>
+    <middlename>Бекович 1</middlename>
+    <lastname>Пупкин 1</lastname>
+    <nickname>пуп 1</nickname>
+    <company>ИП Пупкин 1</company>
+    <address>Солянка,25 1</address>
+    <mobilePhone>89263883883 1</mobilePhone>
+    <email>vasek@gmail.com 1</email>
+  </contact>
+</list>
