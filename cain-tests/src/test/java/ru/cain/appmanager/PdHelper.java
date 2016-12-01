@@ -2,7 +2,6 @@ package ru.cain.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.cain.model.PdData;
 
 /**
@@ -12,7 +11,6 @@ public class PdHelper extends HelperBAse {
 
   public PdHelper(WebDriver wd) {
     super(wd);
-
   }
 
   public void fillInnField(PdData pdData) {

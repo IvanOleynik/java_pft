@@ -1,5 +1,7 @@
 package ru.cain.appmanager;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,6 +19,7 @@ public class ApplicationManager {
   WebDriver wd;
 
   private NavigationHelper navigationHelper;
+  private PageHelper pageHelper;
   private SmsHelper smsHelper;
   private SessionHelper sessionHelper;
   private PdHelper pdHelper;
@@ -47,7 +50,9 @@ public class ApplicationManager {
     pdHelper = new PdHelper(wd);
     buyHelper = new BuyHelper(wd);
     productHelper = new ProductHelper(wd);
-    sessionHelper.login("7133822", "000000");
+    pageHelper = new PageHelper(wd);
+    sessionHelper.login("2939518", "000000");
+    sessionHelper.initAlfa();
   }
 
   public void stop() {
@@ -57,6 +62,7 @@ public class ApplicationManager {
   public SmsHelper getSmsHelper() {
     return smsHelper;
   }
+
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
@@ -76,5 +82,9 @@ public class ApplicationManager {
 
   public SessionHelper getSessionHelper() {
     return sessionHelper;
+  }
+
+  public PageHelper getPageHelper() {
+    return pageHelper;
   }
 }

@@ -11,7 +11,7 @@ public class ProductTests extends TestBase {
 
   public void testProductGrafic() {
     app.getProductHelper().choosingProduct();
-    app.getProductHelper().grafikWeek();
+    app.getProductHelper().grafikWeek();    //проверка выбора значения (график-неделя)
 
   }
 

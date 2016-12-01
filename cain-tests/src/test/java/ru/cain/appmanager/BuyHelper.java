@@ -13,7 +13,6 @@ public class BuyHelper extends  HelperBAse{
     super(wd);
   }
 
-
   public void submitBuying() {
     click(By.xpath(".//*[@id='react-app']/div/div[2]/div/div[3]/div[1]/div[2]/div[2]/button"));
   }
