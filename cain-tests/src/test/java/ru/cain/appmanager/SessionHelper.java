@@ -23,6 +23,7 @@ public class SessionHelper extends HelperBAse {
     if (isElementPresent(By.name("pt1:password_key"))) {
       type(By.id("pt1:password_key::content"), "0000");
       click(By.id("pt1:next_button::button"));
+      
     }
   }
 }

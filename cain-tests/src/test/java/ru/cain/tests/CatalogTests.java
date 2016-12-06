@@ -1,5 +1,6 @@
 package ru.cain.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -11,6 +12,9 @@ public class CatalogTests extends TestBase {
 
   public  void testCategories() {
     app.getNavigationHelper().goToCatalog();
-    app.getPageHelper().categories();
+    app.getCatalogHelper().categories();
+    int categories = app.getCatalogHelper().getCategoriesCount();
+    Assert.assertEquals(categories, 2);
+
   }
 }

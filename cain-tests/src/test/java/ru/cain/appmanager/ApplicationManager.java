@@ -19,12 +19,12 @@ public class ApplicationManager {
   WebDriver wd;
 
   private NavigationHelper navigationHelper;
-  private PageHelper pageHelper;
   private SmsHelper smsHelper;
   private SessionHelper sessionHelper;
   private PdHelper pdHelper;
   private BuyHelper buyHelper;
   private ProductHelper productHelper;
+  private CatalogHelper catalogHelper;
   private String browser;
 
   public ApplicationManager(String browser) {
@@ -42,7 +42,7 @@ public class ApplicationManager {
     } else if (browser.equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver(capabilities);
     }
-    wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     wd.get("https://cainft7.alfaintra.net/cain");
     smsHelper = new SmsHelper(wd);
     navigationHelper = new NavigationHelper(wd);
@@ -50,7 +50,7 @@ public class ApplicationManager {
     pdHelper = new PdHelper(wd);
     buyHelper = new BuyHelper(wd);
     productHelper = new ProductHelper(wd);
-    pageHelper = new PageHelper(wd);
+    catalogHelper = new CatalogHelper(wd);
     sessionHelper.login("2939518", "000000");
     sessionHelper.initAlfa();
   }
@@ -84,7 +84,8 @@ public class ApplicationManager {
     return sessionHelper;
   }
 
-  public PageHelper getPageHelper() {
-    return pageHelper;
+  public CatalogHelper getCatalogHelper() {
+    return catalogHelper;
   }
+
 }
