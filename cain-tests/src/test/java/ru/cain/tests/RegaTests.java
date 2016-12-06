@@ -22,7 +22,7 @@ public class RegaTests {
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
-    @Test
+    @Test (enabled = false)      //простая проверка входа - пока отключен
     public void Rega() {
         wd.get("https://cainft7.alfaintra.net/cain");
         wd.findElement(By.name("username")).click();

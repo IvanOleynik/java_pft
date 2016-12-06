@@ -12,9 +12,9 @@ public class CatalogTests extends TestBase {
 
   public  void testCategories() {
     app.getNavigationHelper().goToCatalog();
-    app.getCatalogHelper().categories();
+    app.getCatalogHelper().categories();  //проверка категорий - наличие
     int categories = app.getCatalogHelper().getCategoriesCount();
-    Assert.assertEquals(categories, 2);
+    Assert.assertEquals(categories, 2);    //проверка количества категорий
 
   }
 }
